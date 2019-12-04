@@ -69,6 +69,19 @@ $ go tool cover -html coverage.out
 [temper][] is released under the MIT license. Please see the
 [LICENSE.txt][] file for more information.
 
+
+## Prior Art
+
+Below are projects written in other languages:
+
+- <https://github.com/elpeo/rbtemper> --- Ruby TEMPer library
+- <https://github.com/bitplane/temper> --- Command line sensor logger
+  for Temper1 devices
+- <https://github.com/padelt/temper-python> --- libusb/PyUSB-based
+  driver to read TEMPer USB HID devices (USB ID 0x0C45:0x7401) and serve
+  as a NewSNMP passpersist module
+
+
 [GitHub Flow]: http://scottchacon.com/2011/08/31/github-flow.html
 [godoc image]: https://godoc.org/github.com/gotmc/temper?status.svg
 [godoc link]: https://godoc.org/github.com/gotmc/temper

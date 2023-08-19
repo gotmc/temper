@@ -18,7 +18,7 @@ $ go get github.com/gotmc/temper
   - OS X: `$ brew install libusb`
   - Debian/Ubuntu: `$ sudo apt-get install -y libusb-1.0-0 libusb-1.0-0-dev`
 - [Go libusb][libusb] — Go bindings for the [libusb C library][libusb-c]
-  - `$ go get github.com/gotmc/libusb`
+  - Add `require github.com/gotmc/libusb v1.0.22` to your `go.mod`
 
 ## Documentation
 
@@ -46,22 +46,20 @@ submit a [pull request][].  [GitHub Flow][] is summarized as:
 - Once it is merged and pushed to `master`, you can and *should* deploy
   immediately.
 
-## Testing
+
+### Testing
 
 Prior to submitting a [pull request][], please run:
 
 ```bash
-$ gofmt
-$ golint
-$ go vet
-$ go test
+$ make check
+$ make lint
 ```
 
 To update and view the test coverage report:
 
 ```bash
-$ go test -coverprofile coverage.out
-$ go tool cover -html coverage.out
+$ make cover
 ```
 
 ## License

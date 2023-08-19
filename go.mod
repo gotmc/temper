@@ -1,5 +1,5 @@
 module github.com/gotmc/temper
 
-go 1.13
+go 1.18
 
-require github.com/gotmc/libusb v0.0.0-20191204152728-47e189886b84
+require github.com/gotmc/libusb v1.0.22

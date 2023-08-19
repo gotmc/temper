@@ -1,7 +1,8 @@
 # temper
 
-[![GoDoc][godoc image]][godoc link]
-[![License Badge][license image]][LICENSE.txt]
+[![GoDoc][godoc badge]][godoc link]
+[![Go Report Card][report badge]][report card]
+[![License Badge][license badge]][LICENSE.txt]
 
 Go library to communicate with a TEMPer USB temperature monitors.
 
@@ -12,6 +13,7 @@ Go library to communicate with a TEMPer USB temperature monitors.
 $ go get github.com/gotmc/temper
 ```
 
+
 ## Dependencies
 
 - [libusb C library][libusb-c] — Library for USB device access
@@ -19,6 +21,7 @@ $ go get github.com/gotmc/temper
   - Debian/Ubuntu: `$ sudo apt-get install -y libusb-1.0-0 libusb-1.0-0-dev`
 - [Go libusb][libusb] — Go bindings for the [libusb C library][libusb-c]
   - Add `require github.com/gotmc/libusb v1.0.22` to your `go.mod`
+
 
 ## Documentation
 
@@ -28,23 +31,15 @@ Documentation can be found at either:
 - <http://localhost:6060/pkg/github.com/gotmc/temper/> after running `$
   godoc -http=:6060`
 
+
 ## Contributing
 
-[temper][] is developed using [Scott Chacon][]'s [GitHub Flow][]. To
-contribute, fork [temper][], create a feature branch, and then
-submit a [pull request][].  [GitHub Flow][] is summarized as:
+Contributions are welcome! To contribute please:
 
-- Anything in the `master` branch is deployable
-- To work on something new, create a descriptively named branch off of
-  `master` (e.g., `new-oauth2-scopes`)
-- Commit to that branch locally and regularly push your work to the same
-  named branch on the server
-- When you need feedback or help, or you think the branch is ready for
-  merging, open a [pull request][].
-- After someone else has reviewed and signed off on the feature, you can
-  merge it into master.
-- Once it is merged and pushed to `master`, you can and *should* deploy
-  immediately.
+1. Fork the repository
+2. Create a feature branch
+3. Code
+4. Submit a [pull request][]
 
 
 ### Testing
@@ -80,13 +75,13 @@ Below are projects written in other languages:
   as a NewSNMP passpersist module
 
 
-[GitHub Flow]: http://scottchacon.com/2011/08/31/github-flow.html
-[godoc image]: https://godoc.org/github.com/gotmc/temper?status.svg
+[godoc badge]: https://godoc.org/github.com/gotmc/temper?status.svg
 [godoc link]: https://godoc.org/github.com/gotmc/temper
 [libusb]: https://github.com/gotmc/libusb
 [libusb-c]: http://libusb.info
 [LICENSE.txt]: https://github.com/gotmc/temper/blob/master/LICENSE.txt
-[license image]: https://img.shields.io/badge/license-MIT-blue.svg
+[license badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [pull request]: https://help.github.com/articles/using-pull-requests
-[Scott Chacon]: http://scottchacon.com/about.html
+[report badge]: https://goreportcard.com/badge/github.com/gotmc/temper
+[report card]: https://goreportcard.com/report/github.com/gotmc/temper
 [temper]: https://github.com/gotmc/temper

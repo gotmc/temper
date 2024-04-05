@@ -1,4 +1,4 @@
-// Copyright (c) 2016–2023 The temper developers. All rights reserved.
+// Copyright (c) 2016–2024 The temper developers. All rights reserved.
 // Project site: https://github.com/gotmc/temper
 // Use of this source code is governed by a MIT-style license that
 // can be found in the LICENSE.txt file for the project.
@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/gotmc/libusb"
+	libusb "github.com/gotmc/libusb/v2"
 )
 
 const (
@@ -22,7 +22,7 @@ const (
 type temper struct {
 	Timeout          int
 	Device           *libusb.Device
-	DeviceDescriptor *libusb.DeviceDescriptor
+	DeviceDescriptor *libusb.Descriptor
 	DeviceHandle     *libusb.DeviceHandle
 	ConfigDescriptor *libusb.ConfigDescriptor
 	BulkEndpoint     *libusb.EndpointDescriptor
@@ -115,39 +115,39 @@ func (d *temper) Close() error {
 // SendCommandToDevice sends the given command and data to the device and
 // returns the number of bytes received and whether or not an error was
 // received.
-func (daq *usb1608fsplus) SendCommandToDevice(cmd command, data []byte) (int, error) {
+func (d *temper) SendCommandToDevice(cmd command, data []byte) (int, error) {
 	if data == nil {
 		data = []byte{0}
 	}
 	requestType := libusb.BitmapRequestType(
 		libusb.HostToDevice, libusb.Vendor, libusb.DeviceRecipient)
-	bytesReceived, err := daq.DeviceHandle.ControlTransfer(
-		requestType, byte(cmd), 0x0, 0x0, data, len(data), daq.Timeout)
+	bytesReceived, err := d.DeviceHandle.ControlTransfer(
+		requestType, byte(cmd), 0x0, 0x0, data, len(data), d.Timeout)
 	if err != nil {
 		return bytesReceived, fmt.Errorf("Error sending command '%s' to device: %s", cmd, err)
 	}
 	return bytesReceived, nil
 }
 
-func (daq *usb1608fsplus) ReadCommandFromDevice(cmd command, data []byte) (int, error) {
+func (d *temper) ReadCommandFromDevice(cmd command, data []byte) (int, error) {
 	if data == nil {
 		data = []byte{0}
 	}
 	requestType := libusb.BitmapRequestType(
 		libusb.DeviceToHost, libusb.Vendor, libusb.DeviceRecipient)
-	bytesReceived, err := daq.DeviceHandle.ControlTransfer(
-		requestType, byte(cmd), 0x0, 0x0, data, len(data), daq.Timeout)
+	bytesReceived, err := d.DeviceHandle.ControlTransfer(
+		requestType, byte(cmd), 0x0, 0x0, data, len(data), d.Timeout)
 	if err != nil {
 		return bytesReceived, fmt.Errorf("Error reading command '%s' from device: %s", cmd, err)
 	}
 	return bytesReceived, nil
 }
 
-func (daq *usb1608fsplus) Read(p []byte) (n int, err error) {
-	return daq.DeviceHandle.BulkTransfer(
-		daq.BulkEndpoint.EndpointAddress,
+func (d *temper) Read(p []byte) (n int, err error) {
+	return d.DeviceHandle.BulkTransfer(
+		d.BulkEndpoint.EndpointAddress,
 		p,
 		len(p),
-		daq.Timeout,
+		d.Timeout,
 	)
 }

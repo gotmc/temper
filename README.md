@@ -6,13 +6,11 @@
 
 Go library to communicate with a TEMPer USB temperature monitors.
 
-
 ## Installation
 
 ```bash
 $ go get github.com/gotmc/temper
 ```
-
 
 ## Dependencies
 
@@ -22,15 +20,13 @@ $ go get github.com/gotmc/temper
 - [Go libusb][libusb] — Go bindings for the [libusb C library][libusb-c]
   - Add `require github.com/gotmc/libusb v1.0.22` to your `go.mod`
 
-
 ## Documentation
 
 Documentation can be found at either:
 
 - <https://godoc.org/github.com/gotmc/temper>
 - <http://localhost:6060/pkg/github.com/gotmc/temper/> after running `$
-  godoc -http=:6060`
-
+godoc -http=:6060`
 
 ## Contributing
 
@@ -40,7 +36,6 @@ Contributions are welcome! To contribute please:
 2. Create a feature branch
 3. Code
 4. Submit a [pull request][]
-
 
 ### Testing
 
@@ -57,23 +52,21 @@ To update and view the test coverage report:
 $ make cover
 ```
 
-## License
-
-[temper][] is released under the MIT license. Please see the
-[LICENSE.txt][] file for more information.
-
-
 ## Prior Art
 
 Below are projects written in other languages:
 
-- <https://github.com/elpeo/rbtemper> --- Ruby TEMPer library
-- <https://github.com/bitplane/temper> --- Command line sensor logger
+- <https://github.com/elpeo/rbtemper> — Ruby TEMPer library
+- <https://github.com/bitplane/temper> — Command line sensor logger
   for Temper1 devices
-- <https://github.com/padelt/temper-python> --- libusb/PyUSB-based
+- <https://github.com/padelt/temper-python> — libusb/PyUSB-based
   driver to read TEMPer USB HID devices (USB ID 0x0C45:0x7401) and serve
   as a NewSNMP passpersist module
 
+## License
+
+[temper][] is released under the MIT license. Please see the
+[LICENSE.txt][] file for more information.
 
 [godoc badge]: https://godoc.org/github.com/gotmc/temper?status.svg
 [godoc link]: https://godoc.org/github.com/gotmc/temper

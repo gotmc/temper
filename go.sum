@@ -1,2 +1,2 @@
-github.com/gotmc/libusb v1.0.22 h1:+5cE9IHMcJF2R39vVRff0TK5jK4TW0pk2FQNyoxMn7M=
-github.com/gotmc/libusb v1.0.22/go.mod h1:fa+kQZl2bW/pna0xryZpEE/ckwD8gqOWjNCewHGp+Aw=
+github.com/gotmc/libusb/v2 v2.3.1 h1:lCz01F0fW8OmVDLxCLsguYvTGXPjzFkJM7l98QLKEds=
+github.com/gotmc/libusb/v2 v2.3.1/go.mod h1:V118mRdvZLfB1EHRtyCLwMJSQi0wkMUTg1gS0lu7lso=
